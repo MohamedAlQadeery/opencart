@@ -1,0 +1,32 @@
+<!--INSTAGRAM code -->
+<div class="block-title text-center margin-bottom-50">
+  <h3 class="text-uppercase">{{heading_title}}</h3>
+  <span class="text-uppercase">Our Latest Feeds</span>
+</div>
+<div class="instagram clearfix">
+<div id="instagram_feed"  class="module-slider owl-carousel pull-left">
+{% for post in result.data %}
+    <div class="product-layout item">
+        <div class="product-block">
+        <div class="product-block-inner">
+    <a class="instagram-unit" target="_blank" href="{{ post.link}}">
+    <img src="{{ post.images.low_resolution.url}}"  alt="{{ post.caption.text}}" class="img-responsive" /></a>
+    </div></div></div>
+{% endfor %}
+</div>
+</div><!--clearfix-->
+<!--End of INSTAGRAM code -->
+<script type="text/javascript">
+$('#instagram_feed').owlCarousel({
+  items: 4,
+  itemsDesktop : [1199,4],
+  itemsDesktopSmall : [980,2],
+  itemsTablet: [768,1],
+  itemsTabletSmall: false,
+  itemsMobile : [479,1],
+  autoPlay: false,
+  navigation: true,
+  navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+  pagination: false
+});
+</script>
